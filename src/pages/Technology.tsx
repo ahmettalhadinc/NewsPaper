@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 
 type Result = {
   author: string;
@@ -15,7 +15,7 @@ function Technology() {
   const [result, setResults] = useState<Result[]>([]);
   const [loading, setLoading] = useState<boolean>(true); 
   const [error, setError] = useState<string | null>(null);
-  const [totalResults, setTotalResults] = useState<number>(0); 
+
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(1); 
   const [pageSize] = useState<number>(20);
@@ -30,7 +30,7 @@ function Technology() {
 
         if (data.status === 'ok' && data.articles) {
           setResults(data.articles);
-          setTotalResults(data.totalResults); // API'den toplam sonuç sayısını alıyoruz
+         
           setTotalPages(Math.ceil(data.totalResults / pageSize)); 
         } else {
           setError('Hiçbir makale bulunamadı.');

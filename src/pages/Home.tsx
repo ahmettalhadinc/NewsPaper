@@ -1,6 +1,6 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import Slider from 'react-slick'; // React Slick Carousel
+import  { useEffect, useState } from 'react';
+import Slider from 'react-slick'; 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -18,7 +18,7 @@ const Home = () => {
   const [articles, setArticles] = useState<Result[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [totalResults, setTotalResults] = useState<number>(0);
+
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(1);
   const [pageSize] = useState<number>(20); // Sayfa başına haber sayısı
@@ -33,7 +33,7 @@ const Home = () => {
 
         if (data.status === 'ok' && data.articles) {
           setArticles(data.articles);
-          setTotalResults(data.totalResults);
+      
           setTotalPages(Math.ceil(data.totalResults / pageSize));
         } else {
           setError('Hiçbir makale bulunamadı.');

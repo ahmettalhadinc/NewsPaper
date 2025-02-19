@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import '../css/Header.css'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { FaSearch } from "react-icons/fa";
-import SearchPage from '../pages/SearchPage';
+
 
 function Header() {
     const location = useLocation();
@@ -18,7 +18,7 @@ function Header() {
     };
     const handleSearch = () => {
         if (searchTerm) {
-          // Arama terimi varsa, searchPage'e yönlendir
+        
           navigate(`/search?q=${searchTerm}`);
         }
       };
