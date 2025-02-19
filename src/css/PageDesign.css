@@ -1,0 +1,9 @@
+.all{
+    padding: 50px 350px ;
+}
+
+@media (max-width: 768px){
+   .all{
+    padding: 50px 35px ;
+   } 
+}
